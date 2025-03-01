@@ -1,0 +1,1 @@
+export { SurveyText } from './survey-text'

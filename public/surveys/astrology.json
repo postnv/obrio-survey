@@ -1,0 +1,490 @@
+{
+  "name": "astrology",
+  "title": "Your unique astrological blueprint",
+  "pages": [
+    {
+      "id": "p1",
+      "type": "default",
+      "elements": [
+        {
+          "type": "option",
+          "name": "gender",
+          "title": "Select your gender:",
+          "options": [
+            {
+              "text": "Male",
+              "next": "p2"
+            }, {
+              "text": "Female",
+              "next": "p2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "default",
+      "elements": [
+        {
+          "type": "option",
+          "name": "relationship_status",
+          "title": "So we can get to know you better, tell us about your relationship status.",
+          "options": [
+            {
+              "text": "Single",
+              "next": "p3"
+            },
+            {
+              "text": "In a relationship",
+              "next": "p8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "type": "default",
+      "elements": [
+        {
+          "type": "option",
+          "name": "single_parent",
+          "title": "Are you a single parent?",
+          "options": [
+            {
+              "text": "Yes",
+              "value": true,
+              "next": "p4"
+            },
+            {
+              "text": "No",
+              "value": false,
+              "next": "p4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "type": "default",
+      "context": [
+        {
+          "key": "[gender]",
+          "type": "value",
+          "target": "gender"
+        },
+        {
+          "key": "[children]",
+          "type": "if",
+          "target": "single_parent",
+          "value": "who have children"
+        }
+      ],
+      "elements": [
+        {
+          "type": "option",
+          "name": "relationship_problem",
+          "title": "Single [gender] [children] need a slightly different approach to improve their relationship. Which statement best describes you?",
+          "options": [
+            {
+              "text": "I’m very unhappy with how things are going in my relationship",
+              "next": "p5"
+            },
+            {
+              "text": "I’m unhappy with parts of my relationship, but some things are working well",
+              "next": "p5"
+            },
+            {
+              "text": "I’m generally happy in my relationship",
+              "next": "p5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "type": "default",
+      "elements": [
+        {
+          "type": "option",
+          "name": "overthink",
+          "title": "Do you tend to overthink?",
+          "options": [
+            {
+              "text": "Yes",
+              "value": true,
+              "next": "info"
+            },
+            {
+              "text": "No",
+              "value": false,
+              "next": "info"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "type": "default",
+      "elements": [
+        {
+          "type": "option",
+          "name": "importance",
+          "title": "What is most important to you?",
+          "options": [
+            {
+              "text": "Success",
+              "next": "p7"
+            },
+            {
+              "text": "Romance",
+              "next": "p7"
+            },
+            {
+              "text": "Stability",
+              "next": "p7"
+            },
+            {
+              "text": "Freedom",
+              "next": "p7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "type": "default",
+      "elements": [
+        {
+          "type": "option",
+          "name": "about_us",
+          "title": "Where did you hear about us?",
+          "options": [
+            {
+              "text": "Poster or Billboard",
+              "next": "end"
+            },
+            {
+              "text": "Friend or Family",
+              "next": "end"
+            },
+            {
+              "text": "Instagram",
+              "next": "end"
+            },
+            {
+              "text": "Direct Mail or Package Insert",
+              "next": "end"
+            },
+            {
+              "text": "Online TV or Streaming TV",
+              "next": "end"
+            },
+            {
+              "text": "TV",
+              "next": "end"
+            },
+            {
+              "text": "Radio",
+              "next": "end"
+            },
+            {
+              "text": "Search Engine (Google, Bing, etc.)",
+              "next": "end"
+            },
+            {
+              "text": "Newspaper or Magazine",
+              "next": "end"
+            },
+            {
+              "text": "Facebook",
+              "next": "end"
+            },
+            {
+              "text": "Blog Post or Website Review",
+              "next": "end"
+            },
+            {
+              "text": "Podcast",
+              "next": "end"
+            },
+            {
+              "text": "Influencer",
+              "next": "end"
+            },
+            {
+              "text": "Youtube",
+              "next": "end"
+            },
+            {
+              "text": "Pinterest",
+              "next": "end"
+            },
+            {
+              "text": "Other",
+              "next": "end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "type": "default",
+      "elements": [
+        {
+          "type": "option",
+          "name": "parent",
+          "title": "Are you a parent?",
+          "options": [
+            {
+              "text": "Yes",
+              "value": true,
+              "next": "p9"
+            },
+            {
+              "text": "No",
+              "value": false,
+              "next": "p9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "type": "default",
+      "context": [
+        {
+          "key": "[gender]",
+          "type": "value",
+          "target": "gender"
+        },
+        {
+          "key": "[children]",
+          "type": "if",
+          "target": "parent",
+          "value": "who have children"
+        }
+      ],
+      "elements": [
+        {
+          "type": "option",
+          "name": "relationship_problem",
+          "title": "[gender] [children] need a slightly different approach to improve their relationship. Which statement best describes you?",
+          "options": [
+            {
+              "text": "I’m very unhappy with how things are going in my relationship",
+              "next": "p10"
+            },
+            {
+              "text": "I’m unhappy with parts of my relationship, but some things are working well",
+              "next": "p10"
+            },
+            {
+              "text": "I’m generally happy in my relationship",
+              "next": "p10"
+            },
+            {
+              "text": "I’ve never been in a relationship",
+              "next": "p10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "type": "default",
+      "elements": [
+        {
+          "type": "option",
+          "name": "partner",
+          "title": "Is your partner an introvert or extrovert?",
+          "options": [
+            {
+              "text": "Introvert",
+              "next": "p11"
+            },
+            {
+              "text": "Extrovert",
+              "next": "p11"
+            },
+            {
+              "text": "A bit of both",
+              "next": "p11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "type": "default",
+      "elements": [
+        {
+          "type": "option",
+          "name": "partner_gender",
+          "title": "What is your partner’s gender?",
+          "options": [
+            {
+              "text": "Male",
+              "next": "p12"
+            }, {
+              "text": "Female",
+              "next": "p12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "type": "default",
+      "elements": [
+        {
+          "type": "ranking",
+          "name": "partner_priority",
+          "title": "Do you agree with the statement below?",
+          "text": "My partner and I make sex a priority in our relationship",
+          "options": [
+            {
+              "text": "Strongly agree",
+              "next": "p13",
+              "value": 4
+            }, {
+              "text": "Agree",
+              "next": "p13",
+              "value": 3
+            },
+            {
+              "text": "Neutral",
+              "next": "p13",
+              "value": 2
+            }, {
+              "text": "Disagree",
+              "next": "p13",
+              "value": 1
+            },
+            {
+              "text": "Strongly disagree",
+              "next": "p13",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "type": "default",
+      "elements": [
+        {
+          "type": "option",
+          "name": "relationship_goal",
+          "title": "When you think about your relationship goals, you feel...?",
+          "options": [
+            {
+              "text": "Optimistic! They are totally doable, with some guidance.",
+              "next": "p7"
+            },
+            {
+              "text": "Cautious. I’ve struggled before, but I’m hopeful.",
+              "next": "p7"
+            },
+            {
+              "text": "I’m feeling a little anxious, honestly.",
+              "next": "p7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "type": "default",
+      "elements": [
+        {
+          "type": "option",
+          "name": "importance",
+          "title": "Is emotional control tricky for you?",
+          "options": [
+            {
+              "text": "Yes",
+              "next": "p7"
+            },
+            {
+              "text": "Sometimes",
+              "next": "p7"
+            },
+            {
+              "text": "Rarely",
+              "next": "p7"
+            },
+            {
+              "text": "Not at all",
+              "next": "p7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "info",
+      "type": "info",
+      "context": [
+        {
+          "key": "[next]",
+          "type": "equals",
+          "target": "overthink",
+          "equals": "Yes",
+          "value": "p6"
+        },
+        {
+          "key": "[next]",
+          "type": "equals",
+          "target": "overthink",
+          "equals": "No",
+          "value": "p14"
+        }
+      ],
+      "elements": [
+        {
+          "type": "info",
+          "name": "info",
+          "title": "So how does it work?",
+          "text": "We analyze hundreds of data points to create your unique astrological blueprint. This is combined with AI to tailor-make your astrological insights, based on your answers. We’re going to change your relationship with astrology.",
+          "options": [
+            {
+              "text": "Next",
+              "next": "[next]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "type": "end",
+      "elements": [
+        {
+          "type": "end",
+          "name": "end",
+          "title": "Thank you!",
+          "text": "Would you like to restart our survey?",
+          "options": [
+            {
+              "text": "Restart",
+              "next": "p1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
