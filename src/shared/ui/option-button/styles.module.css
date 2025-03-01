@@ -1,0 +1,22 @@
+.optionBtn {
+    composes: button from '../button/styles.module.css';
+    max-width: 20.625rem;
+    max-height: 4rem;
+    height: 4rem;
+    width: 100%;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: center;
+    color: inherit;
+    background: var(--grey);
+    padding: 0.75rem 1.25rem;
+    border: 1px solid rgba(224, 224, 224, 1);
+    border-radius: 1rem;
+    box-shadow: 2px 2px 6px 0px rgba(84, 60, 151, 0.25);
+}
+
+.optionBtn:active {
+    background: var(--bg-gradient);
+    color: white
+}
