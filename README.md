@@ -6,7 +6,6 @@
 - `fill .env variables`
 ```dotenv
 SURVEY=astrology
-NEXT_PUBLIC_URL=http://localhost:3000
 ```
 - `npm i`
 - `npm run dev`

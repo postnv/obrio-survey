@@ -1,12 +1,13 @@
 "use server"
 
+import { promises as fs } from 'fs'
+
 import { Survey } from "@/entities/survey/types";
 
+// lets pretend we have feature flag or process.env
 export const loadSurvey = async (): Promise<Survey> => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/survey`, {
-        cache: 'force-cache',
-        next: { revalidate: 60 }
-    });
+    const survey = process.env.SURVEY ?? 'astrology';
+    const file = await fs.readFile(process.cwd() + `/public/surveys/${survey}.json`, 'utf8');
 
-    return await res.json() as Survey
+    return JSON.parse(file) as Survey;
 }
