@@ -8,7 +8,7 @@ import { SurveyHeader } from "./ui/survey-header";
 
 import { SurveyPage } from "@/entities/survey/types";
 import { useAppSelector } from "@/shared/lib";
-import { populateContext } from "@/entities/survey/lib";
+import { fillContext } from "@/entities/survey/lib";
 
 interface PropsType {
     page: SurveyPage
@@ -16,7 +16,7 @@ interface PropsType {
 
 export const SurveyScreen = ({ page }: PropsType ) => {
     const savedAnswers = useAppSelector((state) => state.survey.savedAnswers)
-    const surveyPage = populateContext(page, savedAnswers);
+    const surveyPage = fillContext(page, savedAnswers);
 
     return (
         <div className={classNames(css.page, {

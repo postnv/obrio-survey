@@ -21,14 +21,14 @@ export const getContext = (context: SurveyContext, savedAnswers: SurveyAnswer[])
     }
 }
 
-export const populateContext = (page: SurveyPage, savedAnswers: SurveyAnswer[]) => {
-    let json = JSON.stringify(page);
+export const fillContext = (page: SurveyPage, savedAnswers: SurveyAnswer[]) => {
+    const json = JSON.stringify(page);
 
     if (!page.context) return page;
 
-    page.context.forEach(context => {
-        json = json.replaceAll(context.key, getContext(context, savedAnswers));
-    })
+    const resultJson = page.context.reduce((result, context) => {
+        return result.replaceAll(context.key, getContext(context, savedAnswers));
+    }, json)
 
-    return JSON.parse(json) as SurveyPage;
+    return JSON.parse(resultJson) as SurveyPage;
 }
