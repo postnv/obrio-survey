@@ -1,6 +1,6 @@
 # Obrio Survey
 
-[Deployed on Vercel](https://clario-login-form.vercel.app/)
+[Deployed on Vercel](https://obrio-survey.vercel.app)
 
 ## Installation:
 - `fill .env variables`
